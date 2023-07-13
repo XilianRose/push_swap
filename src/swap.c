@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   push_swap.h                                        :+:    :+:            */
+/*   swap.c                                             :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/07/12 15:46:53 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/07/13 15:23:30 by mstegema      ########   odam.nl         */
+/*   Created: 2023/07/13 14:49:36 by mstegema      #+#    #+#                 */
+/*   Updated: 2023/07/13 15:56:58 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../inc/push_swap.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include "../libft/inc/libft.h"
+/*	Swap the first 2 elements at the top of stack a. Do nothing if there is only
+one or no elements.
+*/
+void	sa(t_list **stack)
+{
+	t_list	*new_head;
 
-// typedef struct s_node {
-// 	int			i;
-// 	t_node		*next;
-// }	t_node;
+	temp = &stack->next;
+}
 
-#endif
+
+A
+a1 -> a2
+a2 -> a3
+a3 -> NULL
+
+A =
