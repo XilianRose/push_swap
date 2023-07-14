@@ -6,7 +6,7 @@
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/12 15:46:53 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/07/13 15:23:30 by mstegema      ########   odam.nl         */
+/*   Updated: 2023/07/14 15:01:24 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,16 @@
 # include <stdlib.h>
 # include "../libft/inc/libft.h"
 
-// typedef struct s_node {
-// 	int			i;
-// 	t_node		*next;
-// }	t_node;
+typedef struct s_stack {
+	int				content;
+	struct s_stack	*next;
+}	t_stack;
 
+//	operations
+void		sa(t_stack **a);
+
+// utils
+void		stack_add_back(t_stack **head, t_stack *new);
+t_stack		*stack_last(t_stack *head);
+t_stack		*stack_new(int content);
 #endif
