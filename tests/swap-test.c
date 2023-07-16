@@ -6,7 +6,7 @@
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/14 11:57:25 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/07/16 11:50:14 by mstegema      ########   odam.nl         */
+/*   Updated: 2023/07/16 15:10:43 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	main(void)
 
 	i = 0;
 	test = ft_calloc(1, sizeof(t_list *));
-	while (i < 5)
+	while (i < 1)
 	{
 		node = stack_new(i);
 		if (!node)

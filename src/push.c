@@ -6,7 +6,7 @@
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/16 11:53:00 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/07/16 12:21:51 by mstegema      ########   odam.nl         */
+/*   Updated: 2023/07/16 15:15:10 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ void	pa(t_stack **b, t_stack **a)
 	t_stack	*first_node;
 
 	first_node = *b;
-	*b = first_node->next;
 	if (first_node == NULL)
 		return ;
+	*b = first_node->next;
 	stack_add_front(a, first_node);
 	ft_printf("pa\n");
 }
@@ -36,9 +36,9 @@ void	pb(t_stack **a, t_stack **b)
 	t_stack	*first_node;
 
 	first_node = *a;
-	*a = first_node->next;
 	if (first_node == NULL)
 		return ;
+	*a = first_node->next;
 	stack_add_front(b, first_node);
 	ft_printf("pb\n");
 }

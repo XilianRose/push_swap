@@ -6,7 +6,7 @@
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/14 15:06:15 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/07/16 13:00:28 by mstegema      ########   odam.nl         */
+/*   Updated: 2023/07/16 15:12:15 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ void	ra(t_stack **a)
 	t_stack	*last_node;
 
 	first_node = *a;
-	second_node = first_node->next;
-	if (first_node == NULL || second_node == NULL)
+	if (first_node == NULL || first_node->next == NULL)
 		return ;
+	second_node = first_node->next;
 	last_node = stack_last(*a);
 	*a = second_node;
 	last_node->next = first_node;
@@ -42,9 +42,9 @@ void	rb(t_stack **b)
 	t_stack	*last_node;
 
 	first_node = *b;
-	second_node = first_node->next;
-	if (first_node == NULL || second_node == NULL)
+	if (first_node == NULL || first_node->next == NULL)
 		return ;
+	second_node = first_node->next;
 	last_node = stack_last(*b);
 	*b = second_node;
 	last_node->next = first_node;

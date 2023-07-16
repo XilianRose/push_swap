@@ -6,7 +6,7 @@
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/16 12:19:32 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/07/16 12:57:09 by mstegema      ########   odam.nl         */
+/*   Updated: 2023/07/16 15:15:42 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	rra(t_stack **a)
 	i = 0;
 	size = stack_size(*a);
 	if (size < 2)
-		return;
+		return ;
 	prev_node = *a;
 	while (i < size - 2)
 	{
@@ -51,7 +51,7 @@ void	rrb(t_stack **b)
 	i = 0;
 	size = stack_size(*b);
 	if (size < 2)
-		return;
+		return ;
 	prev_node = *b;
 	while (i < size - 2)
 	{
