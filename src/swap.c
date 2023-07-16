@@ -6,14 +6,14 @@
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/13 14:49:36 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/07/14 15:10:16 by mstegema      ########   odam.nl         */
+/*   Updated: 2023/07/16 12:20:49 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
 /*	Swap the first 2 elements at the top of stack a. Do nothing if there is only
-one or no elements.
+	one or no elements.
 */
 void	sa(t_stack **a)
 {
@@ -33,7 +33,7 @@ void	sa(t_stack **a)
 }
 
 /*	Swap the first 2 elements at the top of stack b. Do nothing if there is only
-one or no elements.
+	one or no elements.
 */
 void	sa(t_stack **b)
 {

@@ -6,23 +6,44 @@
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/14 14:46:40 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/07/14 21:53:37 by mstegema      ########   odam.nl         */
+/*   Updated: 2023/07/16 12:51:28 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void	stack_add_back(t_stack **head, t_stack *new)
+void	stack_add_back(t_stack **head, t_stack *node)
 {
 	t_stack	*temp;
 
 	if (!*head)
 	{
-		*head = new;
+		*head = node;
 		return ;
 	}
 	temp = stack_last(*head);
-	temp -> next = new;
+	temp -> next = node;
+}
+
+void	stack_add_front(t_stack **head, t_stack *node)
+{
+	node -> next = *head;
+	*head = node;
+}
+
+int	stack_size(t_stack *node)
+{
+	int		res;
+	t_stack	*current;
+
+	res = 0;
+	current = node;
+	while (current != NULL)
+	{
+		current = current -> next;
+		res++;
+	}
+	return (res);
 }
 
 t_stack	*stack_last(t_stack *node)

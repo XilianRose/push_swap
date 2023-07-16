@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   swap-test.c                                        :+:    :+:            */
+/*   reverse-rotate-test.c                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/07/14 11:57:25 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/07/16 11:50:14 by mstegema      ########   odam.nl         */
+/*   Created: 2023/07/16 11:41:35 by mstegema      #+#    #+#                 */
+/*   Updated: 2023/07/16 12:29:41 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-/*	gcc -Wall -Wextra -Werror -g swap-test.c ../src/swap.c ../libft/bin/libft.a
-	../src/utils.c
+/*	gcc -Wall -Wextra -Werror -g reverse-rotate-test.c ../src/reverse-rotate.c
+	../libft/bin/libft.a ../src/utils.c
 */
 
 int	main(void)
@@ -38,7 +38,7 @@ int	main(void)
 		ft_printf("content: %d	address: %p\n", node->content, node);
 		node = node->next;
 	}
-	sa(test);
+	rra(test);
 	node = *test;
 	while (node)
 	{
