@@ -6,7 +6,7 @@
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/14 14:46:40 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/07/14 14:55:59 by mstegema      ########   odam.nl         */
+/*   Updated: 2023/07/14 21:53:37 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ void	stack_add_back(t_stack **head, t_stack *new)
 	temp -> next = new;
 }
 
-t_stack	*stack_last(t_stack *head)
+t_stack	*stack_last(t_stack *node)
 {
-	while (head != NULL && head -> next != NULL)
-		head = head -> next;
-	return (head);
+	while (node != NULL && node -> next != NULL)
+		node = node -> next;
+	return (node);
 }
 
 t_stack	*stack_new(int content)
