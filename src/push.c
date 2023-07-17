@@ -6,7 +6,7 @@
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/16 11:53:00 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/07/16 15:15:10 by mstegema      ########   odam.nl         */
+/*   Updated: 2023/07/17 09:57:58 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 /*	(push a): Take the first element at the top of b and put it at the top of a.
 	Do nothing if b is empty.
 */
-
 void	pa(t_stack **b, t_stack **a)
 {
 	t_stack	*first_node;

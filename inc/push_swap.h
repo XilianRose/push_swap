@@ -6,7 +6,7 @@
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/12 15:46:53 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/07/16 16:20:41 by mstegema      ########   odam.nl         */
+/*   Updated: 2023/07/17 14:36:51 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_stack {
 // parse & init
 
 int			check_chars(int argc, char **argv);
+int			check_doubles(t_stack *a, int number);
 
 //	operations
 

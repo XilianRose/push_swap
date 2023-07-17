@@ -6,7 +6,7 @@
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/16 15:31:07 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/07/16 16:33:03 by mstegema      ########   odam.nl         */
+/*   Updated: 2023/07/17 13:37:54 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,32 +44,4 @@ int	check_chars(int argc, char **argv)
 		}
 	}
 	return (0);
-}
-
-// still have to check for over & underflow + test init & checks
-
-int	stack_init(t_stack **a, int argc, char	**argv)
-{
-	t_stack	*node;
-	char	**array;
-	int		i;
-	int		j;
-	int		number;
-
-	i = 1;
-	while (i < argc)
-	{
-		array = ft_split(argv[i], ' ');
-		j = 0;
-		while (array)
-		{
-			number = ft_atoi(array[j]);
-			if (check_doubles(*a, number) == 1)
-				exit(1);
-			node = stack_new(number);
-			stack_add_front(a, node);
-			j++;
-		}
-	}
-
 }

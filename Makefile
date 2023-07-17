@@ -6,7 +6,7 @@
 #    By: mstegema <mstegema@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/07/12 13:58:59 by mstegema      #+#    #+#                  #
-#    Updated: 2023/07/12 15:49:59 by mstegema      ########   odam.nl          #
+#    Updated: 2023/07/17 14:36:13 by mstegema      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,13 @@ OBJDIR	= obj
 BINDIR	= bin
 
 # sources
-SRCS	= src/
+SRCS	= src/main.c \
+	src/parse.c \
+	src/push.c \
+	src/reverse-rotate.c \
+	src/rotate.c \
+	src/swap.c \
+	src/utils.c
 
 # objects
 OBJS	= $(SRCS:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
@@ -54,14 +60,8 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c $(HEADER)
 	@$(CC) -c $(CFLAGS) $< -o $@
 	@echo "Compiling: $(PURPLE)$<$(NC)"
 
-debughome:
-	$(MAKE) AT_HOME=1 DEBUG=1
-
 debug:
 	$(MAKE) DEBUG=1
-
-home:
-	$(MAKE) AT_HOME=1
 
 clean:
 	@$(MAKE) clean -C ./libft
