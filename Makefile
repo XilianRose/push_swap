@@ -6,7 +6,7 @@
 #    By: mstegema <mstegema@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/07/12 13:58:59 by mstegema      #+#    #+#                  #
-#    Updated: 2023/07/17 14:36:13 by mstegema      ########   odam.nl          #
+#    Updated: 2023/07/19 13:49:25 by mstegema      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,7 @@ SRCS	= src/main.c \
 	src/reverse-rotate.c \
 	src/rotate.c \
 	src/swap.c \
+	src/stack-manipulation.c \
 	src/utils.c
 
 # objects
@@ -57,7 +58,7 @@ $(BINDIR)/$(NAME): $(OBJS)
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c $(HEADER)
 	@mkdir -p $(OBJDIR)
-	@$(CC) -c $(CFLAGS) $< -o $@
+	@$(CC) -c $(CFLAGS) $(LINKS) $< -o $@
 	@echo "Compiling: $(PURPLE)$<$(NC)"
 
 debug:
