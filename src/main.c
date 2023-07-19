@@ -6,7 +6,7 @@
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/13 16:30:42 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/07/17 14:42:47 by mstegema      ########   odam.nl         */
+/*   Updated: 2023/07/17 17:02:16 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int	main(int argc, char	**argv)
 		node = node->next;
 	}
 		// operation
-	pa(b, a);
+	pa(&b, &a);
 		// printf test a after operation
 	ft_printf("stack a after: \n");
 	node = a;
