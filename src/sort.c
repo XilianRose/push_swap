@@ -6,7 +6,7 @@
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/20 10:24:01 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/07/20 14:23:33 by mstegema      ########   odam.nl         */
+/*   Updated: 2023/07/20 15:16:29 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,3 @@ int	sort(t_stack **a, t_stack **b)
 	pa(b, a);
 	return (0);
 }
-

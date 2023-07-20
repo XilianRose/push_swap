@@ -1,3 +1,6 @@
 [submodule "libft"]
 	path = libft
 	url = git@github.com:XilianRose/42lib.git
+[submodule "tests/visualizer"]
+	path = tests/visualizer
+	url = https://github.com/o-reo/push_swap_visualizer.git
