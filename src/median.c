@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sort.c                                             :+:    :+:            */
+/*   median.c                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/19 15:34:29 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/07/20 10:23:25 by mstegema      ########   odam.nl         */
+/*   Updated: 2023/07/20 11:39:00 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void	median_swap(int *first, int *second)
+static void	median_swap(int *first, int *second)
 {
 	int	temp;
 
@@ -21,7 +21,7 @@ void	median_swap(int *first, int *second)
 	*second = temp;
 }
 
-void	median_sort(int *array, int len)
+static void	median_sort(int *array, int len)
 {
 	int	i;
 	int	j;
@@ -50,6 +50,8 @@ int	calculate_median(t_stack *a)
 
 	len = stack_size(a);
 	array = ft_calloc(len + 1, sizeof(int));
+	if (!array)
+		exit_wrapper("failed to allocate for median calculation\n");
 	i = 0;
 	while (i < len)
 	{

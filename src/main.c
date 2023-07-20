@@ -6,7 +6,7 @@
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/13 16:30:42 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/07/19 16:46:58 by mstegema      ########   odam.nl         */
+/*   Updated: 2023/07/20 12:04:10 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ int	main(int argc, char	**argv)
 	a = NULL;
 	b = NULL;
 	stack_init(&a, argc, argv);
-	calculate_median(a);
+	sort(&a, &b);
 	return (0);
 }
