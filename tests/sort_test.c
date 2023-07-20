@@ -6,11 +6,29 @@
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/20 10:24:01 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/07/20 14:23:33 by mstegema      ########   odam.nl         */
+/*   Updated: 2023/07/20 14:18:07 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
+
+void	print_stacks(t_stack *a, t_stack *b)
+{
+	while (a != NULL && a->next != NULL)
+	{
+		ft_printf("stack a: [%i]\n", a->content);
+		a = a->next;
+	}
+	if (a != NULL)
+		ft_printf("stack a: [%i]\n", a->content);
+	while (b != NULL && b->next != NULL)
+	{
+		ft_printf("stack b: [%i]\n", b->content);
+		b = b->next;
+	}
+	if (b != NULL)
+		ft_printf("stack b: [%i]\n", b->content);
+}
 
 void	compare_b(t_stack **b, t_stack **a, int pivot)
 {
@@ -29,6 +47,7 @@ int	sort_b(t_stack **b, t_stack **a, int size)
 	int		i;
 
 	pivot = calculate_median(*b);
+	ft_printf("pivot: %i\n", pivot);
 	i = 0;
 	while (i < size)
 	{
@@ -55,6 +74,7 @@ int	sort_a(t_stack **a, t_stack **b, int size)
 	int		i;
 
 	pivot = calculate_median(*a);
+	ft_printf("pivot: %i\n", pivot);
 	i = 0;
 	while (i < size)
 	{
@@ -73,15 +93,18 @@ int	sort(t_stack **a, t_stack **b)
 	while (size_a > 1)
 	{
 		sort_a(a, b, size_a);
+		print_stacks(*a, *b);
 		size_a = stack_size(*a);
 	}
 	size_b = stack_size(*b);
 	while (size_b > 1)
 	{
 		sort_b(b, a, size_b);
+		print_stacks(*a, *b);
 		size_b = stack_size(*b);
 	}
 	pa(b, a);
+	print_stacks(*a, *b);
 	return (0);
 }
 

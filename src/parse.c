@@ -6,7 +6,7 @@
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/16 15:31:07 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/07/19 14:04:54 by mstegema      ########   odam.nl         */
+/*   Updated: 2023/07/20 14:23:56 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,13 +59,11 @@ int	check_chars(int argc, char **argv)
 
 	i = 1;
 	j = 0;
-	ft_printf("checkpoint 1\n");
 	while (i < argc)
 	{
 		j = 0;
 		while (argv[i][j] != '\0')
 		{
-			ft_printf("argv[%i][%i] = [%c]\n", i, j, argv[i][j]);
 			if (argv[i][j] == '+' || argv[i][j] == '-' || argv[i][j] == ' '
 				|| ft_isdigit(argv[i][j]) == 1)
 				j++;
