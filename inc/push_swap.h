@@ -6,7 +6,7 @@
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/12 15:46:53 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/07/21 13:41:10 by mstegema      ########   odam.nl         */
+/*   Updated: 2023/07/21 16:18:03 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,12 @@ int			check_chars(int argc, char **argv);
 // sorting
 
 int			calculate_median(t_stack *a);
-void		sort(t_stack **a, t_stack **b);
+int			*calculate_pivots(t_stack *a);
+void		sort_a(t_stack **a, t_stack **b, int size, int *pivots);
+void		sort_b(t_stack **b, t_stack **a, int size, int pivot);
 void		sort_three(t_stack **a);
-void		check_a(t_stack **a);
+void		sort_small(t_stack **a, t_stack **b);
+void		sort_big(t_stack **a, t_stack **b);
 
 //	operations
 
