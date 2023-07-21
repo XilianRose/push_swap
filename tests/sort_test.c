@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sort.c                                             :+:    :+:            */
+/*   sort_test.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/20 10:24:01 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/07/20 14:18:07 by mstegema      ########   odam.nl         */
+/*   Updated: 2023/07/21 13:22:53 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,13 @@ void	compare_b(t_stack **b, t_stack **a, int pivot)
 	t_stack	*current;
 
 	current = *b;
-	if (current->content <= pivot)
+	if (current->content > pivot)
 		pa(b, a);
 	else
 		rb(b);
 }
 
-int	sort_b(t_stack **b, t_stack **a, int size)
+void	sort_b(t_stack **b, t_stack **a, int size)
 {
 	int		pivot;
 	int		i;
@@ -54,7 +54,7 @@ int	sort_b(t_stack **b, t_stack **a, int size)
 		compare_b(b, a, pivot);
 		i++;
 	}
-	return (0);
+	return ;
 }
 
 void	compare_a(t_stack **a, t_stack **b, int pivot)
@@ -62,13 +62,13 @@ void	compare_a(t_stack **a, t_stack **b, int pivot)
 	t_stack	*current;
 
 	current = *a;
-	if (current->content > pivot)
+	if (current->content <= pivot)
 		pb(a, b);
 	else
 		ra(a);
 }
 
-int	sort_a(t_stack **a, t_stack **b, int size)
+void	sort_a(t_stack **a, t_stack **b, int size)
 {
 	int		pivot;
 	int		i;
@@ -81,10 +81,10 @@ int	sort_a(t_stack **a, t_stack **b, int size)
 		compare_a(a, b, pivot);
 		i++;
 	}
-	return (0);
+	return ;
 }
 
-int	sort(t_stack **a, t_stack **b)
+void	sort(t_stack **a, t_stack **b)
 {
 	int	size_a;
 	int	size_b;
@@ -105,6 +105,5 @@ int	sort(t_stack **a, t_stack **b)
 	}
 	pa(b, a);
 	print_stacks(*a, *b);
-	return (0);
+	return ;
 }
-

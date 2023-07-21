@@ -6,7 +6,7 @@
 #    By: mstegema <mstegema@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/07/12 13:58:59 by mstegema      #+#    #+#                  #
-#    Updated: 2023/07/20 15:15:46 by mstegema      ########   odam.nl          #
+#    Updated: 2023/07/21 13:46:14 by mstegema      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,9 @@ SRCS	= src/main.c \
 	src/swap.c \
 	src/stack-manipulation.c \
 	src/median.c \
-	src/sort.c \
+	src/pivot.c \
+	src/sort1.c \
+	src/sort2.c \
 	src/utils.c
 
 # objects

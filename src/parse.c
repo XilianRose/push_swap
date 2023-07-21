@@ -6,7 +6,7 @@
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/16 15:31:07 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/07/20 14:23:56 by mstegema      ########   odam.nl         */
+/*   Updated: 2023/07/21 10:22:16 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	stack_init(t_stack **a, int argc, char	**argv)
 			if (check_doubles(*a, number) == 1)
 				exit_wrapper("input contains doubles");
 			node = stack_new(number);
-			stack_add_front(a, node);
+			stack_add_back(a, node);
 			j++;
 		}
 		i++;
