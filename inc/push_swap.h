@@ -6,7 +6,7 @@
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/12 15:46:53 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/07/23 23:05:11 by mstegema      ########   odam.nl         */
+/*   Updated: 2023/07/23 23:10:28 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,15 @@ void		sort_three(t_stack **a);
 void		sort_small(t_stack **a, t_stack **b);
 void		sort_big(t_stack **a, t_stack **b);
 
+// sort utils
+
 int			find_node(t_stack **a, int pivot);
 int			find_node_between(t_stack **a, t_pivots *pivots, int r1, int r2);
 int			phase_two_find_node(t_stack **b, int size);
 void		phase_one_push(t_stack **a, t_stack **b, int node_index);
 void		phase_two_push(t_stack **a, t_stack **b, int node_index);
+
+// calculate pivots
 
 int			calculate_median(t_stack *a);
 t_pivots	calculate_3_pivots(t_stack *a, t_pivots *pivots);
