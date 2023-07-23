@@ -6,7 +6,7 @@
 #    By: mstegema <mstegema@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/07/12 13:58:59 by mstegema      #+#    #+#                  #
-#    Updated: 2023/07/21 14:33:58 by mstegema      ########   odam.nl          #
+#    Updated: 2023/07/23 16:03:49 by mstegema      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,14 +31,16 @@ BINDIR	= bin
 # sources
 SRCS	= src/main.c \
 	src/parse.c \
+	src/pivot.c \
+	src/sort-small.c \
+	src/sort-100.c \
+	src/sort-500.c \
+	src/sort-utils.c \
 	src/push.c \
 	src/reverse-rotate.c \
 	src/rotate.c \
 	src/swap.c \
 	src/stack-manipulation.c \
-	src/pivot.c \
-	src/sort1.c \
-	src/sort2.c \
 	src/utils.c
 
 # objects

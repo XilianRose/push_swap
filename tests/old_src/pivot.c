@@ -6,17 +6,25 @@
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/19 15:34:29 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/07/23 12:16:54 by mstegema      ########   odam.nl         */
+/*   Updated: 2023/07/21 16:26:20 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
+static void	median_swap(int *first, int *second)
+{
+	int	temp;
+
+	temp = *first;
+	*first = *second;
+	*second = temp;
+}
+
 static void	median_sort(int *array, int len)
 {
 	int	i;
 	int	j;
-	int	temp;
 
 	i = 0;
 	j = 0;
@@ -26,22 +34,21 @@ static void	median_sort(int *array, int len)
 		while (j < (len - i))
 		{
 			if (array[j] > array[j + 1])
-			{
-				temp = array[j];
-				array[j] = array[j + 1];
-				array[j + 1] = temp;
-			}
+				median_swap(&array[j], &array[j + 1]);
 			j++;
 		}
 		i++;
 	}
 }
 
-static int	*init_median_array(t_stack *a, int len)
+int	calculate_median(t_stack *a)
 {
 	int	*array;
+	int	len;
 	int	i;
+	int	median;
 
+	len = stack_size(a);
 	array = ft_calloc(len + 1, sizeof(int));
 	if (!array)
 		exit_wrapper("failed to allocate for median calculation\n");
@@ -53,60 +60,33 @@ static int	*init_median_array(t_stack *a, int len)
 		a = a->next;
 	}
 	median_sort(array, len - 1);
-	return (array);
-}
-
-int	calculate_median(t_stack *a)
-{
-	int	*array;
-	int	len;
-	int	median;
-
-	len = stack_size(a);
-	array = init_median_array(a, len);
 	median = array[((len + 1) / 2) - 1];
 	my_freestr((char *)array);
 	return (median);
 }
 
-t_pivots	calculate_3_pivots(t_stack *a, t_pivots *pivots)
+int	*calculate_pivots(t_stack *a)
 {
+	int	*pivot;
 	int	*array;
-	int	len;
+	int	i;
 	int	median;
-	int	half_median;
 
-	len = stack_size(a);
-	array = init_median_array(a, len);
-	median = ((len + 1) / 2) - 1;
-	half_median = ((median + 1) / 2) - 1;
-	pivots->pivot[0] = array[half_median];
-	pivots->pivot[1] = array[median];
-	pivots->pivot[2] = array[median + half_median];
+	pivot = ft_calloc(3, sizeof(int));
+	array = ft_calloc(stack_size(a) + 1, sizeof(int));
+	if (!array || !pivot)
+		exit_wrapper("failed to allocate for pivots calculation\n");
+	i = 0;
+	while (i < stack_size(a))
+	{
+		array[i] = a->content;
+		i++;
+		a = a->next;
+	}
+	median_sort(array, stack_size(a) - 1);
+	median = ((stack_size(a) + 1) / 2) - 1;
+	pivot[0] = array[median];
+	pivot[1] = array[(median + 1 / 2) - 1];
 	my_freestr((char *)array);
-	return (*pivots);
-}
-
-t_pivots	calculate_5_pivots(t_stack *a, t_pivots *pivots)
-{
-	int	*array;
-	int	len;
-	int	median;
-	int	half_median;
-	int	quart_median;
-
-	len = stack_size(a);
-	array = init_median_array(a, len);
-	median = ((len + 1) / 2) - 1;
-	half_median = ((median + 1) / 2) - 1;
-	quart_median = ((half_median + 1) / 2) - 1;
-	pivots->pivot[0] = array[quart_median];
-	pivots->pivot[1] = array[half_median];
-	pivots->pivot[2] = array[half_median + quart_median];
-	pivots->pivot[3] = array[median];
-	pivots->pivot[4] = array[median + quart_median];
-	pivots->pivot[5] = array[median + half_median];
-	pivots->pivot[6] = array[median + half_median + quart_median];
-	my_freestr((char *)array);
-	return (*pivots);
+	return (pivot);
 }
