@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sort-utils                                         :+:    :+:            */
+/*   sort-utils.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/23 15:56:58 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/07/23 16:01:42 by mstegema      ########   odam.nl         */
+/*   Updated: 2023/07/23 23:05:37 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,29 +70,81 @@ void	phase_one_push(t_stack **a, t_stack **b, int node_index)
 	pb(a, b);
 }
 
-void	sort_three(t_stack **a)
+int	phase_two_find_node(t_stack **b, int size)
 {
-	t_stack	*first;
-	t_stack	*second;
-	t_stack	*third;
+	t_stack	*current;
+	int		i;
+	int		res;
+	int		highest;
 
-	first = *a;
-	second = first->next;
-	third = second->next;
-	if (first->content > third->content
-		&& first->content > second->content)
+	current = *b;
+	i = 0;
+	res = i;
+	highest = current->content;
+	current->cost.r = i;
+	current->cost.rr = size - i;
+	while (i < size)
 	{
-		ra(a);
-		if (second->content > third->content)
-			sa(a);
+		if (highest < current->content)
+		{
+			highest = current->content;
+			current->cost.r = i;
+			current->cost.rr = size - i;
+			res = i;
+		}
+		i++;
+		current = current->next;
 	}
-	else if (second->content > third->content
-		&& second->content > first->content)
+	return (res);
+}
+
+int	find_node_between(t_stack **a, t_pivots *pivots, int r1, int r2)
+{
+	t_stack	*current;
+	int		i;
+
+	current = *a;
+	i = 0;
+	while (i < stack_size(*a))
 	{
-		rra(a);
-		if (third->content > first->content)
-			sa(a);
+		if ((current->content >= pivots->pivot[r1]
+				&& current->content < pivots->pivot[r1 + 1])
+			|| (current->content >= pivots->pivot[r2]
+				&& current->content < pivots->pivot[r2 + 1]))
+		{
+			current->cost.r = i;
+			current->cost.rr = stack_size(*a) - i;
+			pivots->rb = false;
+			if (current->content >= pivots->pivot[r1]
+				&& current->content < pivots->pivot[r1 + 1])
+				pivots->rb = true;
+			return (i);
+		}
+		i++;
+		current = current->next;
 	}
-	else if (first->content > second->content)
-		sa(a);
+	return (-1);
+}
+
+int	find_node(t_stack **a, int pivot)
+{
+	t_stack	*current;
+	int		size;
+	int		i;
+
+	current = *a;
+	i = 0;
+	size = stack_size(*a);
+	while (i < size)
+	{
+		if (current->content < pivot)
+		{
+			current->cost.r = i;
+			current->cost.rr = size - i;
+			return (i);
+		}
+		i++;
+		current = current->next;
+	}
+	return (-1);
 }

@@ -6,7 +6,7 @@
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/16 15:31:07 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/07/21 10:22:16 by mstegema      ########   odam.nl         */
+/*   Updated: 2023/07/23 22:25:54 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	stack_init(t_stack **a, int argc, char	**argv)
 	{
 		array = ft_split(argv[i], ' ');
 		j = 0;
-		while (array[j] != '\0')
+		while (array[j] != NULL)
 		{
 			number = my_atol(array[j]);
 			if (number < INT32_MIN || number > INT32_MAX)
