@@ -6,7 +6,7 @@
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/12 15:46:53 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/07/23 23:10:28 by mstegema      ########   odam.nl         */
+/*   Updated: 2023/07/24 12:41:03 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 typedef struct s_pivots{
 	int				pivot[10];
 	bool			rb;
+	int				r1;
+	int				r2;
 }	t_pivots;
 
 typedef struct s_price{
@@ -43,7 +45,8 @@ int			check_chars(int argc, char **argv);
 
 void		sort_three(t_stack **a);
 void		sort_small(t_stack **a, t_stack **b);
-void		sort_big(t_stack **a, t_stack **b);
+void		sort_100(t_stack **a, t_stack **b, t_pivots *pivots);
+void		sort_500(t_stack **a, t_stack **b, t_pivots *pivots);
 
 // sort utils
 
@@ -57,7 +60,7 @@ void		phase_two_push(t_stack **a, t_stack **b, int node_index);
 
 int			calculate_median(t_stack *a);
 t_pivots	calculate_3_pivots(t_stack *a, t_pivots *pivots);
-t_pivots	calculate_5_pivots(t_stack *a, t_pivots *pivots);
+t_pivots	calculate_7_pivots(t_stack *a, t_pivots *pivots);
 
 //	operations
 

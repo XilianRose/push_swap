@@ -6,7 +6,7 @@
 #    By: mstegema <mstegema@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/07/12 13:58:59 by mstegema      #+#    #+#                  #
-#    Updated: 2023/07/23 16:03:49 by mstegema      ########   odam.nl          #
+#    Updated: 2023/07/24 12:25:45 by mstegema      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,8 +33,7 @@ SRCS	= src/main.c \
 	src/parse.c \
 	src/pivot.c \
 	src/sort-small.c \
-	src/sort-100.c \
-	src/sort-500.c \
+	src/sort-big.c \
 	src/sort-utils.c \
 	src/push.c \
 	src/reverse-rotate.c \

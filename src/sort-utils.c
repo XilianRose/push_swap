@@ -6,7 +6,7 @@
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/23 15:56:58 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/07/23 23:05:37 by mstegema      ########   odam.nl         */
+/*   Updated: 2023/07/24 12:15:46 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,15 +108,15 @@ int	find_node_between(t_stack **a, t_pivots *pivots, int r1, int r2)
 	while (i < stack_size(*a))
 	{
 		if ((current->content >= pivots->pivot[r1]
-				&& current->content < pivots->pivot[r1 + 1])
+				&& current->content <= pivots->pivot[r1 + 1])
 			|| (current->content >= pivots->pivot[r2]
-				&& current->content < pivots->pivot[r2 + 1]))
+				&& current->content <= pivots->pivot[r2 + 1]))
 		{
 			current->cost.r = i;
 			current->cost.rr = stack_size(*a) - i;
 			pivots->rb = false;
 			if (current->content >= pivots->pivot[r1]
-				&& current->content < pivots->pivot[r1 + 1])
+				&& current->content <= pivots->pivot[r1 + 1])
 				pivots->rb = true;
 			return (i);
 		}

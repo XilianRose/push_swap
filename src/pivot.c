@@ -6,7 +6,7 @@
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/19 15:34:29 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/07/23 22:32:01 by mstegema      ########   odam.nl         */
+/*   Updated: 2023/07/24 12:40:51 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,12 +84,12 @@ t_pivots	calculate_3_pivots(t_stack *a, t_pivots *pivots)
 	pivots->pivot[1] = array[half_median];
 	pivots->pivot[2] = array[median];
 	pivots->pivot[3] = array[median + half_median];
-	pivots->pivot[4] = array[len];
+	pivots->pivot[4] = array[len - 1];
 	my_freestr((char *)array);
 	return (*pivots);
 }
 
-t_pivots	calculate_5_pivots(t_stack *a, t_pivots *pivots)
+t_pivots	calculate_7_pivots(t_stack *a, t_pivots *pivots)
 {
 	int	*array;
 	int	len;
@@ -110,7 +110,7 @@ t_pivots	calculate_5_pivots(t_stack *a, t_pivots *pivots)
 	pivots->pivot[5] = array[median + quart_median];
 	pivots->pivot[6] = array[median + half_median];
 	pivots->pivot[7] = array[median + half_median + quart_median];
-	pivots->pivot[8] = array[len];
+	pivots->pivot[8] = array[len - 1];
 	my_freestr((char *)array);
 	return (*pivots);
 }
