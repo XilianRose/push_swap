@@ -6,7 +6,7 @@
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/16 15:31:07 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/07/23 22:25:54 by mstegema      ########   odam.nl         */
+/*   Updated: 2023/07/24 14:14:03 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,13 @@ static int	check_doubles(t_stack *a, int number)
 	return (0);
 }
 
-int	stack_init(t_stack **a, int argc, char	**argv)
+int	stack_init(t_stack **a, int argc, char	**argv, int i)
 {
 	t_stack	*node;
 	char	**array;
-	int		i;
 	int		j;
 	long	number;
 
-	i = 1;
 	while (i < argc)
 	{
 		array = ft_split(argv[i], ' ');
@@ -48,6 +46,7 @@ int	stack_init(t_stack **a, int argc, char	**argv)
 			j++;
 		}
 		i++;
+		my_freearray(array);
 	}
 	return (0);
 }

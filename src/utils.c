@@ -6,7 +6,7 @@
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/19 13:44:34 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/07/23 12:53:32 by mstegema      ########   odam.nl         */
+/*   Updated: 2023/07/24 14:17:38 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,20 @@ void	exit_wrapper(char *str)
 	exit(EXIT_FAILURE);
 }
 
-void	print_stacks(t_stack *a, t_stack *b)
-{
-	while (a != NULL && a->next != NULL)
-	{
-		ft_printf("stack a: [%i]\n", a->content);
-		a = a->next;
-	}
-	if (a != NULL)
-		ft_printf("stack a: [%i]\n", a->content);
-	while (b != NULL && b->next != NULL)
-	{
-		ft_printf("stack b: [%i]\n", b->content);
-		b = b->next;
-	}
-	if (b != NULL)
-		ft_printf("stack b: [%i]\n", b->content);
-}
+// void	print_stacks(t_stack *a, t_stack *b)
+// {
+// 	while (a != NULL && a->next != NULL)
+// 	{
+// 		ft_printf("stack a: [%i]\n", a->content);
+// 		a = a->next;
+// 	}
+// 	if (a != NULL)
+// 		ft_printf("stack a: [%i]\n", a->content);
+// 	while (b != NULL && b->next != NULL)
+// 	{
+// 		ft_printf("stack b: [%i]\n", b->content);
+// 		b = b->next;
+// 	}
+// 	if (b != NULL)
+// 		ft_printf("stack b: [%i]\n", b->content);
+// }
