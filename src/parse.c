@@ -6,7 +6,7 @@
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/16 15:31:07 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/07/24 14:14:03 by mstegema      ########   odam.nl         */
+/*   Updated: 2023/07/27 11:01:02 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	check_doubles(t_stack *a, int number)
 {
-	while (a != NULL && a->next != NULL)
+	while (a != NULL)
 	{
 		if (a->content == number)
 			return (1);
