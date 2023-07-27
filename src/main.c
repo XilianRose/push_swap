@@ -6,7 +6,7 @@
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/13 16:30:42 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/07/24 14:20:37 by mstegema      ########   odam.nl         */
+/*   Updated: 2023/07/27 12:07:23 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ int	main(int argc, char	**argv)
 	a = NULL;
 	b = NULL;
 	stack_init(&a, argc, argv, 1);
+	if (check_sorted(a) == 0)
+		exit_wrapper("Error\nstack is already sorted\n");
 	if (stack_size(a) < 50)
 		sort_small(&a, &b);
 	else if (stack_size(a) < 100)

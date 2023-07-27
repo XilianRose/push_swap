@@ -6,11 +6,22 @@
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/16 15:31:07 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/07/27 11:01:02 by mstegema      ########   odam.nl         */
+/*   Updated: 2023/07/27 12:03:45 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
+
+int	check_sorted(t_stack *a)
+{
+	while (a->next != NULL)
+	{
+		if (a->content > a->next->content)
+			return (1);
+		a = a->next;
+	}
+	return (0);
+}
 
 static int	check_doubles(t_stack *a, int number)
 {

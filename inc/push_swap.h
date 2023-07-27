@@ -6,7 +6,7 @@
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/12 15:46:53 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/07/24 14:18:11 by mstegema      ########   odam.nl         */
+/*   Updated: 2023/07/27 12:03:40 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef struct s_stack {
 
 int			stack_init(t_stack **a, int argc, char	**argv, int i);
 int			check_chars(int argc, char **argv);
+int			check_sorted(t_stack *a);
 
 // sorting
 
