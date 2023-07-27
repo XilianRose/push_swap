@@ -6,7 +6,7 @@
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/20 10:24:01 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/07/27 11:49:33 by mstegema      ########   odam.nl         */
+/*   Updated: 2023/07/27 11:53:05 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,36 +56,6 @@ void	sort_three(t_stack **a)
 		sa(a);
 }
 
-// void	sort_three(t_stack **a)
-// {
-// 	t_stack	*first;
-// 	t_stack	*second;
-// 	t_stack	*third;
-
-// 	first = *a;
-// 	second = first->next;
-// 	third = second->next;
-// 	if (stack_size(*a) == 3)
-// 	{
-// 		if (first->content > third->content
-// 			&& first->content > second->content)
-// 		{
-// 			ra(a);
-// 			if (second->content > third->content)
-// 				sa(a);
-// 		}
-// 		else if (second->content > third->content
-// 			&& second->content > first->content)
-// 		{
-// 			rra(a);
-// 			if (third->content > first->content)
-// 				sa(a);
-// 		}
-// 	}
-// 	if (first->content > second->content)
-// 		sa(a);
-// }
-
 static void	phase_one(t_stack **a, t_stack **b, int size, int pivot)
 {
 	int		current_size;
@@ -127,4 +97,3 @@ void	sort_small(t_stack **a, t_stack **b)
 	}
 	return ;
 }
-
