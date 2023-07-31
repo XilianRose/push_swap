@@ -6,7 +6,7 @@
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/16 15:31:07 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/07/27 12:03:45 by mstegema      ########   odam.nl         */
+/*   Updated: 2023/07/31 11:54:46 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,9 @@ int	stack_init(t_stack **a, int argc, char	**argv, int i)
 		{
 			number = my_atol(array[j]);
 			if (number < INT32_MIN || number > INT32_MAX)
-				exit_wrapper("input is out of integer range");
+				exit_wrapper("Error\n");
 			if (check_doubles(*a, number) == 1)
-				exit_wrapper("input contains doubles");
+				exit_wrapper("Error\n");
 			node = stack_new(number);
 			stack_add_back(a, node);
 			j++;
