@@ -6,7 +6,7 @@
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/16 15:31:07 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/07/31 11:54:46 by mstegema      ########   odam.nl         */
+/*   Updated: 2023/07/31 14:33:05 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ int	check_chars(int argc, char **argv)
 	while (i < argc)
 	{
 		j = 0;
+		if (argv[i][0] == '\0')
+			return (1);
 		while (argv[i][j] != '\0')
 		{
 			if (argv[i][j] == '+' || argv[i][j] == '-' || argv[i][j] == ' '
